@@ -231,8 +231,13 @@
         window.navigator.standalone === true ||
         window.matchMedia("(display-mode: standalone)").matches;
 
+      if (instalada) {
+        window.location.replace("https://script.google.com/macros/s/AKfycbxNsbK7isdiodkm8DbyrnahOA4taIoh81h0igVyZkiEbhXy_XYFYz0c5PNdSbtQpL47/exec");
+        return;
+      }
+
       document.documentElement.classList.add(
-        instalada ? "modo-app" : "modo-instalador"
+        "modo-instalador"
       );
     })();
   </script>
@@ -531,4 +536,3 @@
 
 </body>
 </html>
-
