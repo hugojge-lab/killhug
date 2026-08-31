@@ -161,10 +161,86 @@
     .oculto {
       display: none;
     }
+  
+    html.modo-app #instaladorContenido {
+      display: none !important;
+    }
+
+    html.modo-instalador #pantallaIngreso {
+      display: none !important;
+    }
+
+    #pantallaIngreso {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f7fb;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .ingresoCaja {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .ingresoLogo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 22px;
+      margin-bottom: 18px;
+    }
+
+    .ingresoTitulo {
+      margin: 0;
+      color: #174ea6;
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .ingresoTexto {
+      margin-top: 10px;
+      color: #687582;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .ingresoIndicador {
+      width: 44px;
+      height: 44px;
+      margin: 24px auto 0;
+      border: 5px solid #dbe6f5;
+      border-top-color: #174ea6;
+      border-radius: 50%;
+      animation: girar 0.8s linear infinite;
+    }
+
+    @keyframes girar {
+      to { transform: rotate(360deg); }
+    }
+
   </style>
+
+  <script>
+    (function () {
+      const instalada =
+        window.navigator.standalone === true ||
+        window.matchMedia("(display-mode: standalone)").matches;
+
+      document.documentElement.classList.add(
+        instalada ? "modo-app" : "modo-instalador"
+      );
+    })();
+  </script>
+
 </head>
 
 <body>
+  <div id="instaladorContenido">
   <main class="pagina">
     <section class="tarjeta">
 
@@ -324,6 +400,16 @@
 
     </section>
   </main>
+</div>
+
+  <div id="pantallaIngreso">
+    <div class="ingresoCaja">
+      <img class="ingresoLogo" src="https://hugojge-lab.github.io/killhug/EEHS_icono_iphone_180.png" alt="EEHS Asunción 2026">
+      <h1 class="ingresoTitulo">EEHS Asunción 2026</h1>
+      <div class="ingresoTexto">Ingresando a la aplicación...</div>
+      <div class="ingresoIndicador" aria-label="Cargando"></div>
+    </div>
+  </div>
 
 
   <script>
@@ -428,6 +514,8 @@
 
     if (estaInstalada()) {
 
+      // Al abrir desde el ícono instalado, el instalador queda oculto
+      // desde el primer render y se redirige inmediatamente a la app.
       window.location.replace(
         URL_APLICACION
       );
@@ -443,3 +531,4 @@
 
 </body>
 </html>
+
