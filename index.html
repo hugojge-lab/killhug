@@ -7,15 +7,20 @@
   <title>EEHS Asunción 2026</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="https://hugojge-lab.github.io/killhug/EEHS_icono_iphone_180.png">
-  <link rel="icon" type="image/png" sizes="180x180" href="https://hugojge-lab.github.io/killhug/EEHS_icono_iphone_180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="EEHS_icono_android_192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="EEHS_icono_app_512.png">
+  <link rel="manifest" href="manifest.webmanifest">
 
+  <meta name="theme-color" content="#174ea6">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="EEHS Asunción 2026">
   <meta name="application-name" content="EEHS Asunción 2026">
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -30,8 +35,10 @@
     .pagina {
       width: 100%;
       max-width: 680px;
-      padding: calc(28px + env(safe-area-inset-top)) 20px
-               calc(32px + env(safe-area-inset-bottom));
+      padding:
+        calc(28px + env(safe-area-inset-top))
+        20px
+        calc(32px + env(safe-area-inset-bottom));
     }
 
     .tarjeta {
@@ -64,8 +71,19 @@
       color: #687582;
     }
 
-    .destacado {
+    .dispositivo {
+      display: inline-block;
       margin-top: 20px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #174ea6;
+      color: white;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .destacado {
+      margin-top: 18px;
       padding: 16px 18px;
       border-radius: 15px;
       background: #eef5ff;
@@ -76,7 +94,7 @@
     }
 
     .pasos {
-      margin-top: 24px;
+      margin-top: 22px;
       text-align: left;
     }
 
@@ -139,87 +157,289 @@
       font-weight: 800;
       cursor: pointer;
     }
+
+    .oculto {
+      display: none;
+    }
   </style>
 </head>
 
 <body>
   <main class="pagina">
     <section class="tarjeta">
-      <img class="logo" src="https://hugojge-lab.github.io/killhug/EEHS_icono_iphone_180.png" alt="EEHS Asunción 2026">
 
-      <h1>Instalá el acceso a EEHS Asunción 2026 en tu teléfono</h1>
+      <img
+        class="logo"
+        src="https://hugojge-lab.github.io/killhug/EEHS_icono_iphone_180.png"
+        alt="EEHS Asunción 2026"
+      >
+
+      <h1>
+        Instalá el acceso a EEHS Asunción 2026 en tu teléfono
+      </h1>
 
       <div class="subtitulo">
         Solo tenés que hacerlo una vez. Luego podrás ingresar directamente desde el ícono que quedará en tu pantalla de inicio.
       </div>
 
-      <div class="destacado">
-        Seguí estos pasos desde tu iPhone:
+      <div
+        id="etiquetaDispositivo"
+        class="dispositivo"
+      >
+        Detectando dispositivo...
       </div>
 
-      <div class="pasos">
-        <div class="paso">
-          <div class="numero">1</div>
-          <div class="pasoTexto">
-            En la <strong>esquina inferior derecha</strong> de la pantalla, tocá el botón de <strong>tres puntitos (•••)</strong>.
-          </div>
+
+      <!-- INSTRUCCIONES PARA IPHONE -->
+
+      <div
+        id="instruccionesIphone"
+        class="oculto"
+      >
+
+        <div class="destacado">
+          Seguí estos pasos desde tu iPhone:
         </div>
 
-        <div class="paso">
-          <div class="numero">2</div>
-          <div class="pasoTexto">
-            En el menú que aparece, elegí <strong>“Compartir”</strong>.
+        <div class="pasos">
+
+          <div class="paso">
+            <div class="numero">1</div>
+            <div class="pasoTexto">
+              En la <strong>esquina inferior derecha</strong> de la pantalla, tocá el botón de <strong>tres puntitos (•••)</strong>.
+            </div>
           </div>
+
+          <div class="paso">
+            <div class="numero">2</div>
+            <div class="pasoTexto">
+              En el menú que aparece, elegí <strong>“Compartir”</strong>.
+            </div>
+          </div>
+
+          <div class="paso">
+            <div class="numero">3</div>
+            <div class="pasoTexto">
+              En las opciones de Compartir, buscá y tocá <strong>“Agregar a Inicio”</strong>.
+            </div>
+          </div>
+
+          <div class="paso">
+            <div class="numero">4</div>
+            <div class="pasoTexto">
+              Verificá que esté activada la opción <strong>“Abrir como app web”</strong>.
+            </div>
+          </div>
+
+          <div class="paso">
+            <div class="numero">5</div>
+            <div class="pasoTexto">
+              Tocá <strong>“Agregar”</strong> en la esquina superior derecha.
+            </div>
+          </div>
+
         </div>
 
-        <div class="paso">
-          <div class="numero">3</div>
-          <div class="pasoTexto">
-            En las opciones de Compartir, buscá y tocá <strong>“Agregar a Inicio”</strong>.
-          </div>
-        </div>
-
-        <div class="paso">
-          <div class="numero">4</div>
-          <div class="pasoTexto">
-            Verificá que esté activada la opción <strong>“Abrir como app web”</strong>.
-          </div>
-        </div>
-
-        <div class="paso">
-          <div class="numero">5</div>
-          <div class="pasoTexto">
-            Tocá <strong>“Agregar”</strong> en la esquina superior derecha.
-          </div>
-        </div>
       </div>
+
+
+      <!-- INSTRUCCIONES PARA ANDROID -->
+
+      <div
+        id="instruccionesAndroid"
+        class="oculto"
+      >
+
+        <div class="destacado">
+          Seguí estos pasos desde tu teléfono Android:
+        </div>
+
+        <div class="pasos">
+
+          <div class="paso">
+            <div class="numero">1</div>
+            <div class="pasoTexto">
+              Abrí esta página con <strong>Google Chrome</strong>.
+            </div>
+          </div>
+
+          <div class="paso">
+            <div class="numero">2</div>
+            <div class="pasoTexto">
+              Tocá los <strong>tres puntitos (⋮)</strong> que están en la <strong>esquina superior derecha</strong> de Chrome.
+            </div>
+          </div>
+
+          <div class="paso">
+            <div class="numero">3</div>
+            <div class="pasoTexto">
+              Elegí <strong>“Agregar a pantalla principal”</strong> o <strong>“Instalar aplicación”</strong>.
+            </div>
+          </div>
+
+          <div class="paso">
+            <div class="numero">4</div>
+            <div class="pasoTexto">
+              Confirmá la instalación tocando <strong>“Instalar”</strong> o <strong>“Agregar”</strong>, según lo que muestre tu teléfono.
+            </div>
+          </div>
+
+          <div class="paso">
+            <div class="numero">5</div>
+            <div class="pasoTexto">
+              El ícono <strong>EEHS Asunción 2026</strong> quedará disponible en tu pantalla de inicio.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- OTROS DISPOSITIVOS -->
+
+      <div
+        id="instruccionesOtros"
+        class="oculto"
+      >
+
+        <div class="destacado">
+          Abrí este enlace desde tu iPhone o teléfono Android para instalar el acceso.
+        </div>
+
+      </div>
+
 
       <div class="nota">
-        El ícono <strong>EEHS Asunción 2026</strong> quedará en la pantalla de inicio de tu iPhone.
-        A partir de ahí, simplemente tocá ese ícono para ingresar a la aplicación del Encuentro.
+        Una vez instalado, simplemente tocá el ícono <strong>EEHS Asunción 2026</strong> para ingresar a la aplicación oficial del Encuentro.
       </div>
 
-      <button class="boton" type="button" onclick="abrirAplicacion()">
+      <button
+        class="boton"
+        type="button"
+        onclick="abrirAplicacion()"
+      >
         Abrir aplicación sin instalar
       </button>
+
     </section>
   </main>
 
+
   <script>
-    const URL_APLICACION = "https://script.google.com/macros/s/AKfycbxNsbK7isdiodkm8DbyrnahOA4taIoh81h0igVyZkiEbhXy_XYFYz0c5PNdSbtQpL47/exec";
+
+    const URL_APLICACION =
+      "https://script.google.com/macros/s/AKfycbxNsbK7isdiodkm8DbyrnahOA4taIoh81h0igVyZkiEbhXy_XYFYz0c5PNdSbtQpL47/exec";
+
 
     function estaInstalada() {
-      return window.navigator.standalone === true ||
-             window.matchMedia("(display-mode: standalone)").matches;
+
+      return (
+        window.navigator.standalone === true ||
+        window.matchMedia(
+          "(display-mode: standalone)"
+        ).matches
+      );
+
     }
+
+
+    function detectarDispositivo() {
+
+      const ua =
+        navigator.userAgent ||
+        navigator.vendor ||
+        window.opera;
+
+
+      const esIphone =
+        /iPhone|iPad|iPod/i.test(ua);
+
+
+      const esAndroid =
+        /Android/i.test(ua);
+
+
+      const etiqueta =
+        document.getElementById(
+          "etiquetaDispositivo"
+        );
+
+
+      const iphone =
+        document.getElementById(
+          "instruccionesIphone"
+        );
+
+
+      const android =
+        document.getElementById(
+          "instruccionesAndroid"
+        );
+
+
+      const otros =
+        document.getElementById(
+          "instruccionesOtros"
+        );
+
+
+      if (esIphone) {
+
+        etiqueta.textContent =
+          "iPhone detectado";
+
+        iphone.classList.remove(
+          "oculto"
+        );
+
+      }
+      else if (esAndroid) {
+
+        etiqueta.textContent =
+          "Android detectado";
+
+        android.classList.remove(
+          "oculto"
+        );
+
+      }
+      else {
+
+        etiqueta.textContent =
+          "Dispositivo no identificado";
+
+        otros.classList.remove(
+          "oculto"
+        );
+
+      }
+
+    }
+
 
     function abrirAplicacion() {
-      window.location.href = URL_APLICACION;
+
+      window.location.href =
+        URL_APLICACION;
+
     }
 
+
     if (estaInstalada()) {
-      window.location.replace(URL_APLICACION);
+
+      window.location.replace(
+        URL_APLICACION
+      );
+
     }
+    else {
+
+      detectarDispositivo();
+
+    }
+
   </script>
+
 </body>
 </html>
